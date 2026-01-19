@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gsap flip layout</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+</head>
+
+<body>
+  <div class="img-gallery" data-scroll-container>
+    <div class="img-gallery-container" data-scroll>
+      <div class="img">
+        <img src="./images/img-1.png" alt="Image 1" />
+      </div>
+      <div class="img">
+        <img src="./images/img-2.png" alt="Image 2" />
+      </div>
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80" alt="Abstract 3" />
+      </div>
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=500&q=80" alt="Abstract 4" />
+      </div>
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=500&q=80" alt="Abstract 5" />
+      </div>
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1617791160505-6f00504e3caf?w=500&q=80" alt="Abstract 6" />
+      </div>
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1618172193763-c511deb635ca?w=500&q=80" alt="Abstract 7" />
+      </div>
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=500&q=80" alt="Abstract 8" />
+      </div>
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80" alt="Abstract 9" />
+      </div>
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=500&q=80" alt="Abstract 10" />
+      </div>
+    </div>
+  </div>
+
+  <div class="btn">Flip layout</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Flip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CustomEase.min.js"></script>
+<script>
+  const scroller = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+  });
+  gsap.registerPlugin(Flip, CustomEase);
+  CustomEase.create("cubic", "0.83, 0, 0.17, 1");
+  const gallery = document.querySelector(".img-gallery-container"),
+    images = gsap.utils.toArray(".img");
+
+  document.querySelector(".btn").addEventListener("click", () => {
+    // Capture state
+    let state = Flip.getState(".img-gallery-container, .img");
+
+    // Toggle classes
+    gallery.classList.toggle("order");
+    images.forEach((wr, i) => {
+      wr.classList.toggle("reorder");
+    });
+
+    // Animate from state
+    Flip.from(state, {
+      absolute: true,
+      duration: 2,
+      stagger: 0.05,
+      ease: "cubic",
+      onComplete: () => {
+        scroller.update(); // Update locomotive scroll after layout change
+      }
+    });
+  });
+</script>
+
+</html>

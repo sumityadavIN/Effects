@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP SVG MotionPath Text Animation | @Codegrid</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+        width="800px"
+        height="600px"
+        viewBox="0 0 350 350"
+        id="text-primary"
+      >
+        <defs><path id="def-1" /></defs>
+        <path
+          id="path-1"
+          d="M -393 405 C -53 405 -73 5 177 5 C 427 5 407 405 747 405"
+        />
+        <text>
+          <textPath
+            id="Text1"
+            fill="#fff"
+            xlink:href="#def-1"
+            startOffset="-25%"
+          >
+            Fly to the moon now
+          </textPath>
+
+          <textPath
+            id="Text2"
+            fill="#fff"
+            xlink:href="#def-1"
+            startOffset="-25%"
+          >
+            Fly to the moon now
+          </textPath>
+
+          <textPath
+            id="Text3"
+            fill="#fff"
+            xlink:href="#def-1"
+            startOffset="-25%"
+          >
+            Fly to the moon now
+          </textPath>
+        </text>
+      </svg>
+
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+        width="600px"
+        height="600px"
+        viewBox="0 0 350 350"
+        id="text-secondary"
+      >
+        <defs><path id="def-2" /></defs>
+        <path
+          id="path-2"
+          d="M -393 60 C -53 60 -70 365 180 365 C 421 352 407 60 725 56"
+        />
+        <text x="50%" y="50%" dominant-baseline="end" text-anchor="middle">
+          <textPath
+            id="Text5"
+            fill="#fff"
+            xlink:href="#def-2"
+            startOffset="37%"
+          >
+            Throwback Music Vol
+          </textPath>
+        </text>
+      </svg>
+
+      <div class="disk">
+        <div class="cover-img">
+          <img src="./sample-cover.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
