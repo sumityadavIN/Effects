@@ -383,7 +383,8 @@
             <div class="projects-grid">
               ${grouped[category].map(p => {
                         const isReact = p.type === 'react';
-                        const linkPath = isReact ? p.indexpath.replace('package.json', '') : p.indexpath;
+                        const indexPath = p.indexpath || '#';
+                        const linkPath = isReact ? indexPath.replace('package.json', '') : indexPath;
 
                         globalIndex++;
                         const serial = String(globalIndex).padStart(3, '0');
