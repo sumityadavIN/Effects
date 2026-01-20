@@ -53,6 +53,30 @@
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 1.5rem;
+            align-items: center;
+        }
+
+        .sort-select {
+            padding: 0.75rem 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sort-select:hover,
+        .sort-select:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #667eea;
+        }
+
+        .sort-select option {
+            background: #1a1a2e;
+            color: #fff;
         }
 
         .search-box {
@@ -173,6 +197,19 @@
             font-family: monospace;
         }
 
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.8rem;
+            color: #fca311;
+            background: rgba(252, 163, 17, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
         .project-card .arrow {
             display: inline-block;
             margin-left: 0.5rem;
@@ -243,6 +280,11 @@
         <p>A collection of beautiful web effects and animations</p>
         <div class="controls">
             <input type="text" class="search-box" id="searchBox" placeholder="Search effects...">
+            <select class="sort-select" id="sortSelect">
+                <option value="default">Default</option>
+                <option value="rating-desc">Rating: High to Low</option>
+                <option value="rating-asc">Rating: Low to High</option>
+            </select>
             <button class="filter-btn active" data-filter="all">All</button>
         </div>
         <div class="stats" id="stats"></div>
@@ -256,9 +298,9 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('projectsContainer');
-            const searchBox = document.getElementById('searchBox');
-            const stats = document.getElementById('stats');
+            const sortSelect = document.getElementById('sortSelect');
             let activeFilter = 'all';
+            let activeSort = 'default';
 
             // Create filter buttons
             const categories = [...new Set(projectData.map(p => p.category))];
@@ -284,6 +326,12 @@
             // Search
             searchBox.addEventListener('input', renderProjects);
 
+            // Sort
+            sortSelect.addEventListener('change', (e) => {
+                activeSort = e.target.value;
+                renderProjects();
+            });
+
             function renderProjects() {
                 const query = searchBox.value.toLowerCase();
                 let filtered = projectData;
@@ -295,6 +343,14 @@
                 if (query) {
                     filtered = filtered.filter(p => p.name.toLowerCase().includes(query));
                 }
+
+                // Sort
+                if (activeSort === 'rating-desc') {
+                    filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+                } else if (activeSort === 'rating-asc') {
+                    filtered.sort((a, b) => (a.rating || 0) - (b.rating || 0));
+                }
+                // 'default' keeps original order
 
                 // Group by category
                 const grouped = {};
@@ -327,15 +383,17 @@
             <div class="projects-grid">
               ${grouped[category].map(p => {
                         const isReact = p.type === 'react';
-                        const linkPath = isReact ? p.path.replace('package.json', '') : p.path;
+                        const linkPath = isReact ? p.indexpath.replace('package.json', '') : p.indexpath;
 
                         globalIndex++;
                         const serial = String(globalIndex).padStart(3, '0');
+                        const rating = p.rating ? p.rating.toFixed(1) : '0.0';
 
                         return `
                 <a href="${linkPath}" class="project-card" target="_self">
                   <div class="card-header">
                     <h3><span class="serial-number">#${serial}</span> ${p.name}</h3>
+                    <span class="rating-badge">★ ${rating}</span>
                   </div>
                 </a>
                 `;
