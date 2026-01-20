@@ -242,6 +242,14 @@
             .controls {
                 padding: 0 1rem;
             }
+
+            .header.hide {
+                transform: translateY(-100%);
+            }
+        }
+
+        .header {
+            transition: transform 0.3s ease;
         }
 
         .card-header {
@@ -300,6 +308,25 @@
 
             const container = document.getElementById('projectsContainer');
             const sortSelect = document.getElementById('sortSelect');
+            const header = document.querySelector('.header');
+
+            // Scroll Hide Logic
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > 50) {
+                    if (currentScrollY > lastScrollY) {
+                        header.classList.add('hide');
+                    } else {
+                        header.classList.remove('hide');
+                    }
+                } else {
+                    header.classList.remove('hide');
+                }
+                lastScrollY = currentScrollY;
+            }, { passive: true });
+
             let activeFilter = 'all';
             let activeSort = 'default';
 
