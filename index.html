@@ -293,10 +293,11 @@
     <main class="container" id="projectsContainer"></main>
 
     <script type="module">
-        import projectData from './projects.js';
-
         // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+            const module = await import('./projects.js?v=' + Date.now());
+            const projectData = module.default;
+
             const container = document.getElementById('projectsContainer');
             const sortSelect = document.getElementById('sortSelect');
             let activeFilter = 'all';
