@@ -165,6 +165,14 @@
             word-break: break-all;
         }
 
+        .serial-number {
+            color: rgba(255, 255, 255, 0.3);
+            margin-right: 0.5rem;
+            font-weight: 400;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+
         .project-card .arrow {
             display: inline-block;
             margin-left: 0.5rem;
@@ -304,6 +312,8 @@
                     return;
                 }
 
+                let globalIndex = 0;
+
                 Object.keys(grouped).sort().forEach(category => {
                     const section = document.createElement('section');
                     section.className = 'category-section';
@@ -317,17 +327,16 @@
             <div class="projects-grid">
               ${grouped[category].map(p => {
                         const isReact = p.type === 'react';
-                        const displayPath = p.path;
                         const linkPath = isReact ? p.path.replace('package.json', '') : p.path;
-                        const badge = isReact ? '<span class="badge react">React Source</span>' : '<span class="badge html">HTML Demo</span>';
+
+                        globalIndex++;
+                        const serial = String(globalIndex).padStart(3, '0');
 
                         return `
                 <a href="${linkPath}" class="project-card" target="_self">
                   <div class="card-header">
-                    <h3>${p.name}</h3>
-                    ${badge}
+                    <h3><span class="serial-number">#${serial}</span> ${p.name}</h3>
                   </div>
-                  <div class="path">${displayPath}</div>
                 </a>
                 `;
                     }).join('')}
