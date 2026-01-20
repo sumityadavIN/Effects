@@ -728,13 +728,6 @@ const projectData = [
     "category": "loader",
     "path": "loader/loader14/index.html"
   },
-  // Original: LANDING PAGE REVEAL ANIMATION GSAP’S OUT HERE FLEXING AGAIN
-  {
-    "type": "html",
-    "name": "LANDING PAGE REVEAL ANIMATION ’S OUT HERE FLEXING AGAIN",
-    "category": "loader",
-    "path": "loader/loader15/codegrid-truekindskincare-landing-page-reveal-javascript/index.html"
-  },
   // Original: MINIMALIST LANDING PAGE REVEAL ANIMATION  AWWWARDS REMAKE  HTML, CSS & GSAP
   {
     "type": "html",
@@ -762,13 +755,6 @@ const projectData = [
     "name": "Landing Page Animation | 24012024 ",
     "category": "loader",
     "path": "loader/loader19/index.html"
-  },
-  // Original: THE MOST SATISFYING LANDING PAGE REVEAL ANIMATION YOU’LL EVER SEE
-  {
-    "type": "html",
-    "name": "THE MOST SATISFYING LANDING PAGE REVEAL ANIMATION YOU’LL EVER SEE",
-    "category": "loader",
-    "path": "loader/loader20/cg-savoirfaire-landing-page-reveal-animation/index.html"
   },
   // Original: THIS WEBSITE PRELOADER GOES ALL-IN ON EMOJI MADNESS (JAVASCRIPT FTW)
   {
@@ -1057,13 +1043,6 @@ const projectData = [
     "category": "misc",
     "path": "misc/misc9/index.html"
   },
-  // Original: JAVASCRIPT VERSION THIS 3D ORB IN NEXT JS AND THREE JS SHOULDN’T LOOK THIS GOOD
-  {
-    "type": "html",
-    "name": "JAVASCRIPT VERSION THIS 3D ORB IN NEXT JS AND THREE JS SHOULDN’T LOOK THIS GOOD",
-    "category": "misc",
-    "path": "misc/misc10/cg-asset-orb-js/index.html"
-  },
   // Original: MINIMALIST DARK SEARCH MODAL (RESPONSIVE)  SEARCH BAR JAVASCRIPT  HTML, CSS & JAVASCRIPT
   {
     "type": "html",
@@ -1092,33 +1071,104 @@ const projectData = [
     "category": "misc",
     "path": "misc/misc14/index.html"
   },
-  // Original: THE INTERACTIVE FLUID GRADIENT YOU’LL KEEP REUSING ON EVERY WEBSITE
-  {
-    "type": "html",
-    "name": "THE INTERACTIVE FLUID GRADIENT YOU’LL KEEP REUSING ON EVERY WEBSITE",
-    "category": "misc",
-    "path": "misc/misc15/cg-webgl-interactive-gradient/index.html"
-  },
-  // Original: THIS GSAP TEXT ANIMATION SHOULDN’T BE THIS SATISFYING (EVEN THE INFINITE MARQUEE JOINS IN)
-  {
-    "type": "html",
-    "name": "THIS TEXT ANIMATION SHOULDN’T BE THIS SATISFYING",
-    "category": "misc",
-    "path": "misc/misc16/codegrid-scroll-activated-text-blocks/index.html"
-  },
-  // Original: THIS JAVASCRIPT CANVAS ANIMATION WASN’T REALLY THAT HARD
-  {
-    "type": "html",
-    "name": "THIS JAVASCRIPT CANVAS ANIMATION WASN’T REALLY THAT HARD",
-    "category": "misc",
-    "path": "misc/misc17/index.html"
-  },
   // Original: VANILLA JS VERSION SPELLBINDING MOTIONPATH SVG TEXT ANIMATION
   {
     "type": "html",
     "name": "GSAP SVG MotionPath Text Animation ",
     "category": "misc",
     "path": "misc/misc18/index.html"
+  },
+
+  // Restored: LANDING PAGE REVEAL ANIMATION ’S OUT HERE FLEXING AGAIN
+  {
+    "type": "html",
+    "name": "LANDING PAGE REVEAL ANIMATION \u2019S OUT HERE FLEXING AGAIN",
+    "category": "loader",
+    "path": "loader/loader30/codegrid-truekindskincare-landing-page-reveal-javascript/index.html"
+  },
+  // Restored: THE MOST SATISFYING LANDING PAGE REVEAL ANIMATION YOU’LL EVER SEE
+  {
+    "type": "html",
+    "name": "THE MOST SATISFYING LANDING PAGE REVEAL ANIMATION YOU\u2019LL EVER SEE",
+    "category": "loader",
+    "path": "loader/loader31/cg-savoirfaire-landing-page-reveal-animation/index.html"
+  },
+  // Restored: JAVASCRIPT VERSION THIS 3D ORB IN NEXT JS AND THREE JS SHOULDN’T LOOK THIS GOOD
+  {
+    "type": "html",
+    "name": "JAVASCRIPT VERSION THIS 3D ORB IN NEXT JS AND THREE JS SHOULDN\u2019T LOOK THIS GOOD",
+    "category": "misc",
+    "path": "misc/misc19/cg-asset-orb-js/index.html"
+  },
+  // Restored: THE INTERACTIVE FLUID GRADIENT YOU’LL KEEP REUSING ON EVERY WEBSITE
+  {
+    "type": "html",
+    "name": "THE INTERACTIVE FLUID GRADIENT YOU\u2019LL KEEP REUSING ON EVERY WEBSITE",
+    "category": "misc",
+    "path": "misc/misc20/cg-webgl-interactive-gradient/index.html"
+  },
+  // Restored: THIS TEXT ANIMATION SHOULDN’T BE THIS SATISFYING
+  {
+    "type": "html",
+    "name": "THIS TEXT ANIMATION SHOULDN\u2019T BE THIS SATISFYING",
+    "category": "misc",
+    "path": "misc/misc21/codegrid-scroll-activated-text-blocks/index.html"
+  },
+  // New: Brutalist Sci-fi Corridor Scene
+  {
+    "type": "html",
+    "name": "Brutalist Sci-fi Corridor Scene",
+    "category": "landing_page",
+    "path": "landing_page/landing_page31/cg-brutalist-corridor/cg-brutalist-corridor-scene/index.html"
+  },
+  // New: Landing Page Reveal With Circular Gallery
+  {
+    "type": "html",
+    "name": "Landing Page Reveal With Circular Gallery",
+    "category": "landing_page",
+    "path": "landing_page/landing_page39/cg-landing-page-reveal-no-webgl/index.html"
+  },
+  // New: We Go Again Rebuild
+  {
+    "type": "html",
+    "name": "We Go Again Rebuild",
+    "category": "landing_page",
+    "path": "landing_page/landing_page40/cg-we-go-again/index.html"
+  },
+  // New: Kurt Davenport | Portfolio
+  {
+    "type": "html",
+    "name": "Kurt Davenport | Portfolio",
+    "category": "landing_page",
+    "path": "landing_page/landing_page41/Minimal-Portfolio-Website-HTML-CSS-JavaScript-main/index.html"
+  },
+  // New: Phantom-Inspired Draggable Infinite Gallery
+  {
+    "type": "html",
+    "name": "Phantom-Inspired Draggable Infinite Gallery",
+    "category": "landing_page",
+    "path": "landing_page/landing_page42/cg-phantom-gallery-javascript/index.html"
+  },
+  // New: BloomParis Inspired Landing Page Reveal
+  {
+    "type": "html",
+    "name": "BloomParis Inspired Landing Page Reveal",
+    "category": "loader",
+    "path": "loader/loader29/gsap-landing-page-reveal-codegrid/index.html"
+  },
+  // New: Interactive Divs with Physics
+  {
+    "type": "html",
+    "name": "Interactive Divs with Physics",
+    "category": "misc",
+    "path": "misc/misc22/index.html"
+  },
+  // Restored: Interactive Floating Physics Gallery
+  {
+    "type": "html",
+    "name": "Interactive Floating Physics Gallery",
+    "category": "misc",
+    "path": "misc/misc17/index.html"
   },
 ];
 
